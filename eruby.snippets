@@ -9,6 +9,7 @@
 #
 #   /\v\$\{(TM_RAILS_TEMPLATE_([^_]+)_RUBY_([^_\s]+))\}/`!p textmate_var('\1', snip)`/g
 #
+extends html
 global !p
 def textmate_var(var, snip):
     lookup = dict(
@@ -166,7 +167,9 @@ endsnippet
 snippet jit "javascript_include_tag"
 `!p textmate_var('TM_RAILS_TEMPLATE_START_RUBY_EXPR', snip)`javascript_include_tag ${1::all}${2:, :cache => ${3:true}}`!p textmate_var('TM_RAILS_TEMPLATE_END_RUBY_EXPR', snip)`
 endsnippet
-
+snippet linkto "simple linkto" 
+`!p textmate_var('TM_RAILS_TEMPLATE_START_RUBY_EXPR', snip)`link_to "${1:link text...}", ${2:path}`!p textmate_var('TM_RAILS_TEMPLATE_END_RUBY_EXPR', snip)`
+endsnippet
 snippet lia "link_to (action)"
 `!p textmate_var('TM_RAILS_TEMPLATE_START_RUBY_EXPR', snip)`link_to "${1:link text...}", :action => "${2:index}"`!p textmate_var('TM_RAILS_TEMPLATE_END_RUBY_EXPR', snip)`
 endsnippet
