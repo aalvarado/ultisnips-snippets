@@ -1,6 +1,15 @@
 ## Snippets from SnipMate, taken from
 ## https://github.com/scrooloose/snipmate-snippets.git
+extends html
 
+snippet php "php tag" 
+<?php
+	$0
+?>
+endsnippet
+snippet phpi "php inline tag" 
+	<?php $0 ?>
+endsnippet
 snippet array "array"
 $${1:arrayName} = array('${2}' => ${3});${4}
 endsnippet
