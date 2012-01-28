@@ -55,11 +55,26 @@ if (${1:true}) {$0} else{};
 endsnippet
 
 snippet if "if"
-if (${1:true}) {$0};
+if (${1:true}) {
+	$0
+}
 endsnippet
 
 snippet timeout "setTimeout function"
 setTimeout(function() {$0}${2:}, ${1:10});
 endsnippet
 
+snippet jq "Jquery element"
+$('${1:element}')${2};
+endsnippet
+
+snippet alert "Description"
+alert('${1:msg}');
+endsnippet
+
+snippet func "function (jq)" i
+function(){
+	${1}
+})
+endsnippet
 # vim:ft=snippets:
