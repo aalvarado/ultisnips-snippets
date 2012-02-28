@@ -185,55 +185,55 @@ snippet dir "filename dir"
 Filename.dirname(__FILE__)
 endsnippet
 
-snippet downto "downto"
+snippet downto "downto" w
 downto(${1:0}) { |${2:n}| ${3} }
 endsnippet
 
-snippet step "step"
+snippet step "step" w
 step(${1:2}) { |${2:n}| ${3} }
 endsnippet
 
-snippet times "times"
+snippet times "times" w
 times { |${1:n}| ${2} }
 endsnippet
 
-snippet upto "upto"
+snippet upto "upto" w
 upto(${1:1.0/0.0}) { |${2:n}| ${3} }
 endsnippet
 
-snippet each "each"
+snippet each "each" w
 each { |${1:e}| ${2} }
 endsnippet
 
-snippet inject "inject"
+snippet inject "inject" w
 inject(${1:init}) { |${2:mem}, ${3:var}| ${4} }
 endsnippet
 
-snippet map "map"
+snippet map "map" w
 map { |${1:e}| ${2} }
 endsnippet
 
-snippet sub "substitute"
+snippet sub "substitute" w
 ${1:g}sub(${2:/pattern/}) { |${3:match}| ${4} }
 endsnippet
 
-snippet scan "scan"
+snippet scan "scan" w
 scan(${1:/pattern/}) { |${2:match}| ${3} }
 endsnippet
 
-snippet max "max"
+snippet max "max" w
 max { |a, b|, ${1} }
 endsnippet
 
-snippet min
+snippet min "min" w
 min { |a, b|, ${1} }
 endsnippet
 
-snippet lambda "lambda"
+snippet lambda "lambda" w
 lambda { |${1:args}| ${2} }
 endsnippet
 
-snippet do "do"
+snippet do "do" w
 do |${1:variable}|
   ${2}
 end
