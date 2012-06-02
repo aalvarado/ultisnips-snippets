@@ -209,7 +209,7 @@ snip.rv = (snip.basename or 'unnamed') + '_submit'
 endsnippet
 
 snippet h1 "XHTML <h1>"
-<h1 id="${1/[\w\d]+|( )/(?1:_:\L$0\E)/g}">${1}</h1>
+<h1>${1}</h1>
 endsnippet
 
 snippet h2 "html h2"
@@ -325,5 +325,21 @@ endsnippet
 
 snippet a "Anchor link"
 	<a href="${0}">${1}</a>
+endsnippet
+
+snippet html5 "html5 template"
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>${1}</title>
+		<meta name="description" content="${2}">
+		<meta name="author" content="${3}">
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		${4}
+	</body>
+</html>
 endsnippet
 # vim:ft=snippets:

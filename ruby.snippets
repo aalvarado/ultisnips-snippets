@@ -258,3 +258,15 @@ endsnippet
 snippet ase "assert equal"
 assert_equal(${1:expected}, ${2:actual})${3}
 endsnippet
+
+snippet logger "special logger"
+logger.info "\n---------------"
+logger.info $0
+logger.info '---------------'
+endsnippet
+
+snippet puts "special puts"
+puts "\n-------------"
+puts $0
+puts '--------------'
+endsnippet
