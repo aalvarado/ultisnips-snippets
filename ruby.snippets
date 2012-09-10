@@ -9,7 +9,7 @@ snippet =b "begin rdoc"
 endsnippet
 
 snippet require "require"
-require "${1}"${2}
+require '${1}'${2}
 endsnippet
 
 snippet case "case"
@@ -251,6 +251,16 @@ class Test${2:$1} < Test::Unit::TestCase
 end
 endsnippet
 
+snippet testclass "rails unit test class" b
+require 'test_helper'
+
+class ${1:ClassName}Test < ActiveSupport::TestCase
+  test "${2:test name}" do
+    assert ${3:"the truth"}
+  end
+end
+endsnippet
+
 snippet as "assert"
 assert(${1:test}, "${2:Failure message.}")${3}
 endsnippet
@@ -269,4 +279,64 @@ snippet puts "special puts"
 puts "\n-------------"
 puts $0
 puts '--------------'
+snippet i18 "I18n.translation" w
+I18n.t("${1}")${2}
+endsnippet
+
+snippet find "capybara find"
+find('${1}')${2}
+endsnippet
+
+snippet find "AR find"
+find(${1})${2}
+endsnippet
+
+snippet puts "special puts"
+puts '------------'
+puts $0
+puts '------------'
+endsnippet
+
+snippet logger "special logger"
+logger.info '------------'
+logger.info $0
+logger.info '------------'
+endsnippet
+
+snippet f.c "factory.create" w
+Factory.create( ${1} )
+endsnippet
+
+snippet controller "rails controller"
+class ${1:ClassName} < ApplicationController
+  def index
+    ${2}
+  end
+end
+endsnippet
+
+snippet model "rails model"
+class ${1:ModelName} < ActiveRecord::Base
+  ${2}
+end
+endsnippet
+snippet namespace "namespace"
+namespace :${1:my_namespace} do
+  $0
+end
+endsnippet
+snippet desc "describe" b
+describe "${1}" do
+  it "${2}" do
+    ${3}
+  end
+end
+endsnippet
+snippet it "it" b
+  it "${2}" do
+    ${3}
+  end
+endsnippet
+snippet f.b "factory build" !b
+Factory.build( :${1} )
 endsnippet

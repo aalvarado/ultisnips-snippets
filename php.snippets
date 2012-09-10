@@ -116,4 +116,23 @@ snippet var "var"
 var_export(${1});${2}
 endsnippet
 
+snippet pr "print"
+print_r( $0 );
+endsnippet
+
+snippet e "echo" iw
+echo("$0");
+endsnippet
+
+snippet sep "print separator"
+print_r('--------------------');
+endsnippet
+snippet print "print" !b
+print (${1});
+endsnippet
+snippet func "function"
+function ${1:my_function}( ${2} ) {
+  ${3}
+}
+endsnippet
 # :vim:ft=snippets:
