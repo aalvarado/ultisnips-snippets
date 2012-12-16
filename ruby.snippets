@@ -279,6 +279,8 @@ snippet puts "special puts"
 puts "\n-------------"
 puts $0
 puts '--------------'
+endsnippet
+
 snippet i18 "I18n.translation" w
 I18n.t("${1}")${2}
 endsnippet
@@ -289,18 +291,6 @@ endsnippet
 
 snippet find "AR find"
 find(${1})${2}
-endsnippet
-
-snippet puts "special puts"
-puts '------------'
-puts $0
-puts '------------'
-endsnippet
-
-snippet logger "special logger"
-logger.info '------------'
-logger.info $0
-logger.info '------------'
 endsnippet
 
 snippet f.c "factory.create" w
@@ -339,4 +329,8 @@ snippet it "it" b
 endsnippet
 snippet f.b "factory build" !b
 Factory.build( :${1} )
+endsnippet
+
+snippet # "var interpolation" i
+#{${1}}${2}
 endsnippet

@@ -47,18 +47,30 @@ snippet lorem "Lorem Ipsum - 50 Words" fb
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 endsnippet
 snippet { "{}brace completion" iw
-{ ${1} }${2}
+{${1}}${2}
 endsnippet
-snippet " "double quotes" i
+snippet " "double quotes" w
 "${1}"${2}
 endsnippet
-snippet ' "single quoetes" i
+snippet ' "single quoetes" w
 '${1}'${2}
 endsnippet
-snippet ( "() braces" i
-( ${1} )${2}
+snippet ( "() braces" w
+(${1})${2}
 endsnippet
-snippet [ "[] braces" i
-[ ${1} ]${2}
+snippet (' "('') braces" i
+('${1}')${2}
+endsnippet
+snippet [ "[] braces" w
+[${1}]${2}
+endsnippet
+snippet [' "['']" i
+['${1}']${2}
+endsnippet
+snippet =' "=''" i
+='${1}'${2}
+endsnippet
+snippet =" "equals double quote" i
+="${1}"${2}
 endsnippet
 # vim:ft=snippets:
