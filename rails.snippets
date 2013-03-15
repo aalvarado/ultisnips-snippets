@@ -893,25 +893,21 @@ setup do
 end
 endsnippet
 
-snippet describe "describe" !b
-describe '${1:}' do
-	it '${2}' do
-		${3}
-	end
-end
-endsnippet
 
-snippet des "describe" !b
-describe '${1:}' do
-	it '${2}' do
-		${3}
-	end
-end
-endsnippet
 
 snippet it "it" !b
 it '${1}' do
 	${2}
+end
+endsnippet
+
+snippet # "variable interpolation" i
+#{${1}}
+endsnippet
+
+snippet describe "describe" !b
+describe '${1}' do
+	$0
 end
 endsnippet
 # vim:ft=snippets:
