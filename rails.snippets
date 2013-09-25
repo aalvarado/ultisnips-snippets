@@ -914,4 +914,8 @@ it '${1}' do
 	${2}
 end
 endsnippet
+
+snippet let "let" !b
+let( :${1} ) { create :${2:`!p snip.rv = t[1]`} }
+endsnippet
 # vim:ft=snippets:
