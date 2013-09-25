@@ -259,8 +259,16 @@ endsnippet
 
 snippet table "XHTML <table>"
 <table border="${1:0}"${2: cellspacing="${3:5}" cellpadding="${4:5}"}>
-	<tr><th>${5:Header}</th></tr>
-	<tr><td>${0:Data}</td></tr>
+	<tr>
+		<th>
+			${5:Header}
+		</th>
+	</tr>
+	<tr>
+		<td>
+			${0:Data}
+		</td>
+	</tr>
 </table>
 endsnippet
 
@@ -292,11 +300,15 @@ snippet ul "unordered list"
 endsnippet
 
 snippet td "table cell"
-<td>$0</td>
+<td>
+	$0
+</td>
 endsnippet
 
 snippet tr "table row"
-<tr>$0</tr>
+<tr>
+	$0
+</tr>
 endsnippet
 
 snippet title "XHTML <title>"
@@ -342,5 +354,14 @@ snippet html5 "html5 template"
 		${4}
 	</body>
 </html>
+endsnippet
+snippet img "image" b!
+<img src="${1:images/}" />${2}
+endsnippet
+snippet s= "style" !i
+ style="${1}"${2}
+endsnippet
+snippet bg "bgcolor" !i
+ bgcolor="#${1}"
 endsnippet
 # vim:ft=snippets:

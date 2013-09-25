@@ -128,11 +128,16 @@ snippet sep "print separator"
 print_r('--------------------');
 endsnippet
 snippet print "print" !b
-print (${1});
+print(${1});
 endsnippet
 snippet func "function"
 function ${1:my_function}( ${2} ) {
   ${3}
 }
+endsnippet
+snippet sp "special print" !b
+print_r("-----------------<br>");
+print_r( ${1} );
+print_r("<br>-----------------<br>");${2}
 endsnippet
 # :vim:ft=snippets:

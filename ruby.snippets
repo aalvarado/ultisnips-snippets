@@ -26,19 +26,13 @@ endsnippet
 
 snippet def "method def"
 def ${1:method_name}
-  ${2:#my method}
+  ${2}
 end
 endsnippet
 
 snippet init "initialize"
 def initialize
   ${1:#my method}
-end
-endsnippet
-
-snippet test "test method def"
-test "${1:test name}" do
-  assert ${2:true}
 end
 endsnippet
 
@@ -280,7 +274,6 @@ puts "\n-------------"
 puts $0
 puts '--------------'
 endsnippet
-
 snippet i18 "I18n.translation" w
 I18n.t("${1}")${2}
 endsnippet
@@ -323,11 +316,11 @@ describe "${1}" do
 end
 endsnippet
 snippet it "it" b
-  it "${2}" do
-    ${3}
-  end
+it '${2}' do
+	${3}
+end
 endsnippet
-snippet f.b "factory build" !b
+snippet f.b "factory build" w
 Factory.build( :${1} )
 endsnippet
 

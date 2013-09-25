@@ -893,29 +893,38 @@ setup do
 end
 endsnippet
 
-snippet describe "describe" !b
-describe '${1:}' do
-	it '${2}' do
-		${3}
-	end
-end
-endsnippet
-
-snippet des "describe" !b
-describe '${1:}' do
-	it '${2}' do
-		${3}
-	end
-end
-endsnippet
-
 snippet it "it" !b
 it '${1}' do
 	${2}
 end
 endsnippet
 
+snippet # "variable interpolation" ib
+#{${1}}
+endsnippet
+
+snippet describe "describe" !b
+describe '${1}' do
+	$0
+end
+endsnippet
+
 snippet let "let" !b
-let( :${1} ) { create :${2:`!p snip.rv = t[1]`} }
+let( :${1} ) { ${2:Factory.create :${3:`!p snip.rv = t[1]`}} }${4}
+
+snippet #{ "var interpolation" ib
+#{${1}}${2}
+endsnippet
+
+snippet context "context spec" !b
+context '${1}' do
+  ${2}
+end${3}
+endsnippet
+
+snippet before "before hook" !b
+before(${1::each}) do
+  ${2}
+end${3}
 endsnippet
 # vim:ft=snippets:
