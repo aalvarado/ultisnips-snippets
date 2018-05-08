@@ -1,0 +1,25 @@
+snippet main "main func" !b
+fn main(${1}) {
+	${2}
+}${3}
+endsnippet
+
+snippet fn "function" 
+fn ${1}(${2}) ${3}{
+	${4}
+}${5}
+endsnippet
+
+snippet p! "println!" 
+println!("${1}"${2});
+endsnippet
+
+snippet let "let" 
+let ${1} = ${2};
+endsnippet
+
+snippet match "match" 
+match ${1} {
+	${2}
+}${3}
+endsnippet

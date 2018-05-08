@@ -26,20 +26,20 @@ endsnippet
 
 snippet def "method def"
 def ${1:method_name}
-  ${2}
-end
+  ${2}${VISUAL}
+end${3}
 endsnippet
 
 snippet init "initialize"
-def initialize
-  ${1:#my method}
-end
+def initialize${1}
+  ${2:#my method}
+end${3}
 endsnippet
 
 snippet if "if"
 if ${1:condition}
-  ${2}
-end
+  ${2}${VISUAL}
+end${3}
 endsnippet
 
 snippet ife "if-else"
@@ -47,7 +47,7 @@ if ${1:condition}
   ${2}
 else
   ${3}
-end
+end${3}
 endsnippet
 
 snippet elsif "elsif"
@@ -75,21 +75,15 @@ endsnippet
 
 snippet class "class"
 class ${1:ClassName}
-  $0
-end
+  ${2}
+end${3}
 endsnippet
 
 snippet cla "class with def"
-class ${1:ClassName}
-  def initialize${2: param1}
-    ${3:#methods}
-  end$0
-end
-endsnippet
-
-snippet mod "module"
-module ${1:`substitute(Filename(), '^.', '\u&', '')`}
-  ${2}
+class ${1}
+  def initialize${2}
+    ${3}
+  end${4}
 end
 endsnippet
 
@@ -134,9 +128,9 @@ end
 endsnippet
 
 snippet defs "define class method"
-def self.${1:class_method_name}
+def self.${1}
   ${2}
-end
+end${3}
 endsnippet
 
 snippet defmm "define method missing"
@@ -161,22 +155,6 @@ snippet app "app"
 if __FILE__ == $PROGRAM_NAME
   ${1}
 end
-endsnippet
-
-snippet file "file read"
-File.read(${1:"path/to/file"})${2}
-endsnippet
-
-snippet Dir "Dirglobal"
-Dir.glob(${1:"dir/glob/*"}) { |${2:file}| ${3} }
-endsnippet
-
-snippet Dir "Dir[..]"
-Dir[${1:"glob/**/*.rb"}]${2}
-endsnippet
-
-snippet dir "filename dir"
-Filename.dirname(__FILE__)
 endsnippet
 
 snippet downto "downto" w
@@ -207,10 +185,6 @@ snippet map "map" w
 map { |${1:e}| ${2} }
 endsnippet
 
-snippet sub "substitute" w
-${1:g}sub(${2:/pattern/}) { |${3:match}| ${4} }
-endsnippet
-
 snippet scan "scan" w
 scan(${1:/pattern/}) { |${2:match}| ${3} }
 endsnippet
@@ -227,12 +201,6 @@ snippet lambda "lambda" w
 lambda { |${1:args}| ${2} }
 endsnippet
 
-snippet do "do" w
-do |${1:variable}|
-  ${2}
-end
-endsnippet
-
 snippet testclass "test class"
 require "test/unit"
 
@@ -241,16 +209,6 @@ require "${1:library_file_name}"
 class Test${2:$1} < Test::Unit::TestCase
   def test_${3:case_name}
     ${4}
-  end
-end
-endsnippet
-
-snippet testclass "rails unit test class" b
-require 'test_helper'
-
-class ${1:ClassName}Test < ActiveSupport::TestCase
-  test "${2:test name}" do
-    assert ${3:"the truth"}
   end
 end
 endsnippet
@@ -271,59 +229,76 @@ endsnippet
 
 snippet puts "special puts"
 puts "\n-------------"
-puts $0
+puts $0${VISUAL}
 puts '--------------'
 endsnippet
+
 snippet i18 "I18n.translation" w
 I18n.t("${1}")${2}
 endsnippet
 
-snippet find "capybara find"
-find('${1}')${2}
-endsnippet
-
-snippet find "AR find"
-find(${1})${2}
-endsnippet
-
 snippet f.c "factory.create" w
-Factory.create( ${1} )
+Factory.create( ${1}${VISUAL} )
 endsnippet
 
-snippet controller "rails controller"
-class ${1:ClassName} < ApplicationController
-  def index
-    ${2}
-  end
-end
-endsnippet
-
-snippet model "rails model"
-class ${1:ModelName} < ActiveRecord::Base
-  ${2}
-end
-endsnippet
 snippet namespace "namespace"
 namespace :${1:my_namespace} do
   $0
 end
 endsnippet
 snippet desc "describe" b
-describe "${1}" do
-  it "${2}" do
-    ${3}
-  end
+describe '${1}' do
+  ${2}${VISUAL}
 end
 endsnippet
 snippet it "it" b
 it '${2}' do
-	${3}
+	${3}${VISUAL}
 end
 endsnippet
+
 snippet f.b "factory build" w
 Factory.build( :${1} )
 endsnippet
 
 snippet # "var interpolation" i
 #{${1}}${2}
+endsnippet
+
+snippet expect "expect" !b
+expect(${1}${VISUAL})${2}
+endsnippet
+
+snippet let "let" !b
+let(:${1}) { ${2}${VISUAL} }${3}
+endsnippet
+
+snippet llet "multline let" !b
+let(:${1}) do
+	${2}${VISUAL}
+end${3}
+endsnippet
+
+snippet iit "single line it" !b
+it { ${1}${VISUAL} }${2}
+endsnippet
+
+snippet allow "allow" !b
+allow(${1}).to receive(${2})
+endsnippet
+
+snippet module "module" !b
+module ${1}
+	${2}
+end
+endsnippet
+
+snippet b.p "binding.pry" !b
+binding.pry
+endsnippet
+
+snippet do "surround do..end"
+${1} do${2}
+	${3}${VISUAL}
+end${4}
 endsnippet

@@ -83,7 +83,7 @@ if (${1:/* condition */})
 endsnippet
 
 snippet printf "printf .. (printf)"
-printf("${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
+printf("${1}\n", ${2});
 endsnippet
 
 snippet st "struct"
